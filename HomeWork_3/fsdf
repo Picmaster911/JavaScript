@@ -1,0 +1,76 @@
+[33mcommit cd7c54f02b4e63c77fa8e0295ca43088015bbca3[m[33m ([m[1;36mHEAD -> [m[1;32mvetka[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m, [m[1;32mNew[m[33m)[m
+Author: picmaster <picmaster911@gmail.com>
+Date:   Wed Nov 2 22:54:46 2022 +0200
+
+    few change
+
+[1mdiff --git a/.idea/vcs.xml b/.idea/vcs.xml[m
+[1mnew file mode 100644[m
+[1mindex 0000000..94a25f7[m
+[1m--- /dev/null[m
+[1m+++ b/.idea/vcs.xml[m
+[36m@@ -0,0 +1,6 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<project version="4">[m
+[32m+[m[32m  <component name="VcsDirectoryMappings">[m
+[32m+[m[32m    <mapping directory="$PROJECT_DIR$" vcs="Git" />[m
+[32m+[m[32m  </component>[m
+[32m+[m[32m</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/script.js b/script.js[m
+[1mindex 83d0dc3..0e97fbb 100644[m
+[1m--- a/script.js[m
+[1m+++ b/script.js[m
+[36m@@ -1,36 +1,36 @@[m
+[31m-cauntOfAnswerPoints=0;[m
+[31m-cauntOfTrueAnswer=0;[m
+[32m+[m[32mlet countOfAnswerPoints=0;[m
+[32m+[m[32mlet countOfTrueAnswer=0;[m
+ [m
+ answer = prompt(`Is mouse a animal ?`).trim().toLowerCase();[m
+ [m
+ if (answer=="yes" || answer==true ){[m
+[31m-    cauntOfAnswerPoints = cauntOfAnswerPoints +10[m
+[31m-    cauntOfTrueAnswer++[m
+[32m+[m[32m    countOfAnswerPoints = countOfAnswerPoints +10[m
+[32m+[m[32m    countOfTrueAnswer++[m
+ }[m
+ answer = prompt(`Has horse 4 foot  ?`).trim().toLowerCase();[m
+ [m
+ if (answer==="yes" || answer==true ){[m
+[31m-    cauntOfAnswerPoints = cauntOfAnswerPoints +10[m
+[31m-    cauntOfTrueAnswer++[m
+[32m+[m[32m    countOfAnswerPoints = countOfAnswerPoints +10[m
+[32m+[m[32m    countOfTrueAnswer++[m
+ }[m
+ answer = prompt(`Has Earth shape of ball ?`).trim().toLowerCase();[m
+ [m
+ if (answer=="yes" || answer==true ){[m
+[31m-    cauntOfAnswerPoints = cauntOfAnswerPoints +10[m
+[31m-    cauntOfTrueAnswer++[m
+[32m+[m[32m    countOfAnswerPoints = countOfAnswerPoints +10[m
+[32m+[m[32m    countOfTrueAnswer++[m
+ }[m
+ answer = prompt(`What color is the sky?`).trim().toLowerCase();[m
+ [m
+ if (answer=="blue"){[m
+[31m-    cauntOfAnswerPoints = cauntOfAnswerPoints +10[m
+[31m-    cauntOfTrueAnswer++[m
+[32m+[m[32m    countOfAnswerPoints = countOfAnswerPoints +10[m
+[32m+[m[32m    countOfTrueAnswer++[m
+ }[m
+ answer = prompt(`How much will 2+2??  `).trim().toLowerCase();[m
+ [m
+ if (answer=="4"){[m
+[31m-    cauntOfAnswerPoints = cauntOfAnswerPoints +10[m
+[31m-    cauntOfTrueAnswer++[m
+[32m+[m[32m    countOfAnswerPoints = countOfAnswerPoints +10[m
+[32m+[m[32m    countOfTrueAnswer++[m
+ }[m
+ [m
+[31m-alert (`You have is ${cauntOfAnswerPoints} points.\n[m
+[31m-You answered correctly for ${cauntOfTrueAnswer}/5.).`);[m
+\ No newline at end of file[m
+[32m+[m[32malert (`You have is ${countOfAnswerPoints} points.\n[m
+[32m+[m[32mYou answered correctly for ${countOfTrueAnswer}/5.).`);[m
+\ No newline at end of file[m
