@@ -24,7 +24,7 @@ const users = [
 			},
 			{
 				"title": "Java Enterprise",
-				"mark": 100
+				"mark": 90
 			}
 		]
 	},
@@ -162,7 +162,7 @@ class  User {
 
 	getGradation(ball) {
 		for (let key in gradation) {
-			if (key >= ball) {
+			if (ball <= key) {
 				return gradation[key];
 			}
 		}
