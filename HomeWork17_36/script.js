@@ -16,6 +16,14 @@ my_select.id = "mySelect"
 const div_shape = document.createElement(`div`);
 div_shape.className ='submit';
 div.className ="form";
+const inputColor = document.createElement(`input`);
+// inputColor.type = "range"
+inputColor.type = "color"
+inputColor.value = "#4575a6"
+
+inputColor.className = "color";
+inputColor.min = "0"
+inputColor.max = "100"
 
 for (const key in myOption) {
     optionArray[key] = myOption[key] ();
@@ -40,6 +48,10 @@ my_select.addEventListener( 'change', () => {
         console.log(`select Circle`);
     }
 })
+inputColor.addEventListener( 'input', () => {
+    div_shape.style.backgroundColor = inputColor.value;
+})
+
 function setStyle (div,borderRadius,width,height){
     div.style.borderRadius = borderRadius ;
     div.style.width = width ;
@@ -48,6 +60,7 @@ function setStyle (div,borderRadius,width,height){
 
 div.appendChild (my_select);
 div.appendChild (div_shape);
+div.appendChild (inputColor);
 document.body.prepend(div);
 
 

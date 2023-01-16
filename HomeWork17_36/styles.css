@@ -6,10 +6,10 @@
     color: #eee;
     font-size: 18px;
     height: 200px;
-    margin-top: 120px;
+
     text-align: center;
     width: 200px;
-    margin: 120px auto;
+    margin: 70px auto;
 }
 
 .title {
@@ -46,4 +46,10 @@
     outline: 0;
     padding: 4px 20px 0;
     width: 100%;
+}
+
+.color {
+
+    width: 100%;
+
 }
