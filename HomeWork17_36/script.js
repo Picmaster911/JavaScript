@@ -64,4 +64,3 @@ div.appendChild (inputColor);
 document.body.prepend(div);
 
 
-
