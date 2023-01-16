@@ -17,7 +17,6 @@ const div_shape = document.createElement(`div`);
 div_shape.className ='submit';
 div.className ="form";
 const inputColor = document.createElement(`input`);
-// inputColor.type = "range"
 inputColor.type = "color"
 inputColor.value = "#4575a6"
 
