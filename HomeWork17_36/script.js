@@ -28,14 +28,15 @@ for (const key in myOption) {
     optionArray[key] = myOption[key] ();
     optionArray[key].text = [key];
     my_select.appendChild(optionArray[key]);
+    console.log(optionArray);
 }
 
 my_select.addEventListener( 'change', () => {
 
-    if (my_select.value === 'Square'){
-        setStyle(div_shape,"0%","200px","200px");
-        console.log(`select Square `);
-    }
+    // if (my_select.value === 'Square'){
+    //     setStyle(div_shape,"0%","200px","200px");
+    //     console.log(`select Square `);
+    // }
 
     if (my_select.value === 'Rectangle'){
         setStyle(div_shape,"0%","200px","150px");
@@ -46,6 +47,7 @@ my_select.addEventListener( 'change', () => {
         setStyle(div_shape,"100%","200px","200px");
         console.log(`select Circle`);
     }
+
 })
 inputColor.addEventListener( 'input', () => {
     div_shape.style.backgroundColor = inputColor.value;
@@ -61,5 +63,11 @@ div.appendChild (my_select);
 div.appendChild (div_shape);
 div.appendChild (inputColor);
 document.body.prepend(div);
+
+let test = document.querySelector("option");
+test.addEventListener('onclick', () => {
+    setStyle(div_shape,"0%","200px","150px");
+    console.log(`select Rectangle`);
+})
 
 

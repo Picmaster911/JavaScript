@@ -1,0 +1,43 @@
+const buttonSave = document.querySelector(".c-button");
+const mainDiv = document.querySelector (".main-container");
+
+// let myElements = {
+//     'FirstName': () => document.querySelector ("#Fname"),
+//     'LastName': () => document.querySelector ("#Lname"),
+//     'Gender': () => document.querySelectorAll(".gender"),
+//     'City': () => document.querySelector(".select-1"),
+//     'Adress': () => document.querySelector("#Adress"),
+//     'SpeakLanguages': () => document.querySelectorAll(".box-1")
+// }
+// const allElement = {};
+// buttonSave.addEventListener("click", e => {
+//     e.preventDefault();
+//     for (const key in myElements) {
+//         allElement[key] = myElements[key]();
+//     }
+//     mainDiv.classList.add("d-none")
+//     const table = document.createElement("table");
+//     const divMain = document.createElement("div");
+//     const tr = document.createElement("tr");
+//     table.style.border = "1px solid black";
+//     tr.style.border = "1px solid black";
+//     for (const key in allElement) {
+//         const td = document.createElement("td");
+//         if (allElement[key].value){
+//             td.innerText = `${key}: ${allElement[key].value}`
+//             tr.append(td);
+//         }
+//         else {
+//             allElement[key].forEach((item)=>{
+//                 const td_l = document.createElement("td");
+//                 if (item.checked) {
+//                     td_l.innerText = `${key}: ${item.value}`
+//                     tr.append(td_l);
+//                 }
+//             })
+//         }
+//     }
+//     table.append(tr)
+//     divMain.append(table);
+//    document.body.append(divMain);
+// })
