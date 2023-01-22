@@ -88,6 +88,7 @@ divItem.addEventListener(`click`,(e)=>{
     }
 })
 buttonB.addEventListener(`click`,() =>{
+    alert(` Товар куплен. Спасибо за покупку ! `);
     divRight.innerHTML = ``;
     mainDiv.innerHTML = ``;
 })
