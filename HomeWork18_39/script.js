@@ -1,23 +1,28 @@
-const buttonSave = document.querySelector(".c-button");
-const mainDiv = document.querySelector (".main-container");
-const table = document.createElement("table");
-const tr = document.createElement("tr");
+const buttonR = document.querySelector(`#right`)
+const buttonL = document.querySelector(`#left`)
+const img = document.querySelector(`#myImg`)
+img.src = `/img/3.png`
+let counter = 0;
+buttonR.addEventListener(`click`,()=>{
+    buttonL.style.display =`inline-block`
 
-const allElements = document.querySelectorAll('input, textarea, select');
-buttonSave.addEventListener("click", e => {
-    e.preventDefault();
-    mainDiv.classList.add("d-none");
-    allElements.forEach((item)=>{
-        const td = document.createElement("td");
-        if(item.checked){
-            td.innerText = item.value;
-            tr.append(td);
-        }
-           if(item.checked !== false || item.defaultValue ===""){
-            td.innerText = item.value;
-            tr.append(td);
-        }
-    });
-});
-table.append(tr);
-document.body.append(table);
+if (counter < 3 ){
+    counter++
+    console.log(counter)
+}
+else  buttonR.style.display =`none`
+
+})
+
+buttonL.addEventListener(`click`,()=>{
+
+    buttonR.style.display =`inline-block`
+    if (counter >= 1 ){
+        counter--
+        console.log(counter)
+    }
+    else {
+        buttonL.style.display =`none`
+    }
+
+})
