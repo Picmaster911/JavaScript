@@ -1,0 +1,30 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.main-container{
+    display: flex;
+    border-radius: 20px;
+    padding: 10px;
+}
+.count{
+    text-align: center;
+    align-items: center;
+}
+.box {
+    align-items: flex-end;
+    border-radius: 5px;
+    margin: 10px;
+    justify-content: center;
+    padding: 10px;
+
+}
+
+.imgM {
+    width: 70px;
+    cursor: pointer;
+}
