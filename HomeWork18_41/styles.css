@@ -1,0 +1,127 @@
+body {
+    display: flex;
+    justify-content: center;
+    font-family: 'Quicksand', sans-serif;
+}
+.container {
+    width: 960px;
+    display: flex;
+    max-height: 800px;
+}
+.menu{
+    border-radius: 5px;
+    border: thick double #32a1ce;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+
+}
+.sidenav {
+    min-height: 900px;
+    padding-top: 130px;
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 230px;
+    background-color: #5c8b9f;
+}
+.menu:hover{
+    background-color: #F89B4D;
+}
+.main {
+    width: 800px;
+    margin: 20px;
+    flex-wrap: wrap;
+    display: flex;
+    background-color: #ffffff;
+    justify-content: center;
+}
+.c-button {
+    margin: 10px auto;
+    width: 130px;
+    appearance: none;
+    border: 0;
+    border-radius: 5px;
+    background: #dcdaae;
+    color: #fff;
+    padding: 8px 16px;
+    font-size: 16px;
+}
+.c-button:hover{
+    background-color: #F89B4D;
+}
+* {
+    box-sizing: border-box;
+}
+
+.product-item {
+    float: left;
+    width: 200px;
+    text-align: center;
+    margin: 10px auto;
+    border-bottom: 2px solid #F5F5F5;
+    background: white;
+    font-family: "Open Sans";
+    transition: .3s ease-in;
+}
+.product-item:hover {
+    border-bottom: 2px solid #fc5a5a;
+}
+.product-item img {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+
+}
+.product-list {
+    background: #fafafa;
+    padding: 15px 0;
+}
+.product-list h3 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #444444;
+    margin: 0 0 10px 0;
+}
+.price {
+    font-size: 16px;
+    color: #fc5a5a;
+    display: block;
+    margin-bottom: 12px;
+}
+.button {
+    text-decoration: none;
+    display: inline-block;
+    padding: 0 12px;
+    background: #cccccc;
+    color: white;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 28px;
+    transition: .3s ease-in;
+}
+.product-item:hover .button {
+    background: #fc5a5a;
+}
+.basket {
+    text-align: center;
+    width: 70px;
+    justify-content: center;
+}
+.form{
+    text-align: center;
+    background-color: #b5d7e3;
+    width: 90%;
+    border-radius: 5px;
+    border: thick double #32a1ce;
+    margin: 10px auto;
+}
+.input{
+    font-size: 20px;
+    line-height: 28px;
+    border-radius: 5px;
+}
+.d-none {
+    dysplay :none;
+}

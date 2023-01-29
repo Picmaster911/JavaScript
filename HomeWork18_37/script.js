@@ -6,3 +6,4 @@ const count = document.querySelector (`#count${index+1}`);
         count.innerText = parseInt(count.innerText) + 1;
     })
 })
+
