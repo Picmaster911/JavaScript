@@ -74,7 +74,7 @@ getMoney(userData,bankData)
     )
     .then(
         msg => {
-            alert(msg);
+            console.log(msg);
         },
         typeCur => {
             do{
@@ -82,10 +82,10 @@ getMoney(userData,bankData)
             }
             while (isNaN(answer))
             if ( bankData[typeCur].max < answer ){
-                alert(`Введенная сумма превышает лимит в банкомате`);
+                console.log(`Введенная сумма превышает лимит в банкомате, лимит ${bankData[typeCur].max} ${typeCurNow}`);
             }
             else if ( bankData[typeCur].min > answer ){
-                alert(`Введенная сумма меньше мин купюры в банкомате`);
+                console.log(`Введенная сумма меньше мин купюры в банкомате, лимит ${bankData[typeCur].min} ${typeCurNow}`);
             }
             else {
                 return Promise.reject(answer);
@@ -96,8 +96,11 @@ getMoney(userData,bankData)
         answer => {},
         answer => {
             alert(`Вот ваши деньги ${answer} ${typeCurNow}`);
+            console.log(`Вот ваши деньги ${answer} ${typeCurNow}`)
         }
     )
     .finally(
-        () => alert(`Спасибо хорошего дня !`)
+        () => {
+            console.log(`Спасибо хорошего дня !`);
+        }
     )
