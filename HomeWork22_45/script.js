@@ -1,65 +1,103 @@
-const input = document.querySelector(`#input1`);
-const submit = document.querySelector(`#submit`);
-const form = document.querySelector(`form`);
-const API = `https://jsonplaceholder.typicode.com/posts`;
-const div = document.createElement(`div`);
-const button =  document.createElement(`button`);
-const mainDivComment = document.createElement(`div`);
-const mainConteiner = document.querySelector(`#mainDiv`);
-button.classList.add(`button`);
-const regexp = new RegExp(/^([1-9][0-9]?|100)$/);
+let answer = ``;
+let typeCurNow = ``;
+let arrayForValidator = [];
+let userData = {
+        'USD': 1000,
+        'EUR': 900,
+        'UAH': 15000,
+        'BIF': 20000,
+        'AOA': 100
+    },
+    bankData = {
+        'USD': {
+            max: 3000,
+            min: 100,
+            img: '💵'
+        },
+        'EUR': {
+            max: 1000,
+            min: 50,
+            img: '💶'
+        },
+        'UAH': {
+            max: 0,
+            min: 0,
+            img: '💴'
+        },
+        'GBP': {
+            max: 10000,
+            min: 100,
+            img: '💷'
+        }
+    }
 
-function  renderComment (response){
-    mainDivComment.innerText = ``;
-    console.log(response);
-    response.forEach(comment => {
-        const divComment = document.createElement(`div`);
-        divComment.classList.add(`flex-container`);
-        const divName = document.createElement(`div`);
-        const divEmail = document.createElement(`div`);
-        divComment.innerText = comment.body;
-        divEmail.innerText = comment.email;
-        divName.innerText = comment.name;
-        divComment.append(divName);
-        divComment.append(divEmail);
-        mainConteiner.append(divComment);
-        button.disabled = 'disabled';
-        button.removeEventListener('click', callAPI, false);
+function getMoney (userData,bankData){
+    do {
+        answer = prompt( `Посмотреть баланс на карте введите Yes ли No` ).toUpperCase();
+    }
+    while (answer !== `YES` && answer !== `NO` );
+    return new Promise((resolve,reject) =>{
+        answer === `YES` ? resolve(userData): reject(bankData);
     })
 }
-function callAPI (){
-    controller(`${API}/${input.value}/comments`,renderComment)
-}
-function renderResponse (response){
-    button.disabled = false;
-    document.querySelectorAll(`.flex-container`).forEach(element => element.remove());
-    button.innerText = `Get comment Id = ${response.id}`;
-    div.innerText = response.body;
-    div.classList.add(`flex-container`);
-    div.append(button);
-    mainConteiner.append(div);
-    button.addEventListener(`click`,callAPI);
+
+function  validator (exp) {
+    return  arrayForValidator.includes(exp);
 }
 
-input.addEventListener(`input`,()=>{
-    if( !regexp.test(input.value)){
-        input.value = `Only number 1-100 `;
-        submit.disabled = 'disabled';
+function showBill (showMany,getType){
+    arrayForValidator = [];
+    for (const currency in showMany){
+        if (getType){
+            if (bankData.hasOwnProperty(currency)){
+                if ( bankData[currency].max > 0){
+                    arrayForValidator.push(currency);
+                }
+            }
+        }
+        else {
+            arrayForValidator.push(currency);
+        }
     }
-    else {
-        submit.disabled = false;
+    do{
+        answer = prompt( `Выберите тип валюты : ${arrayForValidator.join(` :`)}` ).toUpperCase();
     }
-})
-
-function controller (href,func) {
-    fetch(href)
-        .then(response => response.json())
-        .then(json => func(json))
-        .catch(error =>console.error(error))
+    while (!validator(answer));
+    typeCurNow = answer;
+    return  getType ? answer : `На вашем счете - ${showMany[answer]}-${answer}`;
 }
 
-form.addEventListener(`submit`,(e)=>{
-    e.preventDefault();
-    controller(`${API}/${input.value}`,renderResponse)
-    console.log(`submit`);
-})
+getMoney(userData,bankData)
+    .then(
+        showMoney => {return  showBill(showMoney);},
+        () => {return Promise.reject(showBill(userData,`getType`));}
+    )
+    .then(
+        msg => {
+            alert(msg);
+        },
+        typeCur => {
+            do{
+                answer = parseInt(prompt( `Введите сумму для снятия `));
+            }
+            while (isNaN(answer))
+            if ( bankData[typeCur].max < answer ){
+                alert(`Введенная сумма превышает лимит в банкомате`);
+            }
+            else if ( bankData[typeCur].min > answer ){
+                alert(`Введенная сумма меньше мин купюры в банкомате`);
+            }
+            else {
+                return Promise.reject(answer);
+            }
+        }
+    )
+    .then(
+        answer => {},
+        answer => {
+            alert(`Вот ваши деньги ${answer} ${typeCurNow}`);
+        }
+    )
+    .finally(
+        () => alert(`Спасибо хорошего дня !`)
+    )
