@@ -1,8 +1,13 @@
 const API = `https://api.github.com/users`
+const  button = document.querySelector(`#submit`);
 const form =   document.querySelector(`form`);
 const divCont = document.querySelector(`#mainDiv`);
 const input = document.querySelector(`#input1`);
+button.disabled = true;
 
+input.addEventListener(`input`,()=>{
+    button.disabled = false;
+})
 async function controller (API){
     try {
         const response = await fetch(API);
