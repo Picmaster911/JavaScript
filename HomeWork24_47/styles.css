@@ -33,11 +33,25 @@ body {
 
 
 .flex-container{
-    width: 700px;
+    width: 400px;
     display: flex;
     justify-content: space-around;
     margin: 15px auto;
 }
+.heroes__table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+
+}
+.heroes__table td,
+.heroes__table th {
+    padding: 10px;
+    border: 1px solid goldenrod;
+    overflow: hidden;
+    text-align: center
+}
+
 .hero{
     width: 500px;
     display: flex;
