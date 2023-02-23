@@ -20,6 +20,13 @@ async function controller (API,method = "GET",data){
     catch (error){console.log(error)}
 }
 
+async function getData () {
+    const newHero =  await controller (`${API}/heroes`,`GET`);
+    console.log(newHero);
+    newHero.map( hero => renderHero (hero));
+}
+getData();
+
 form.addEventListener(`submit`, async (e) => {
     e.preventDefault();
     const newItem = {
@@ -39,7 +46,7 @@ function  renderHero (newHero){
     let lastElement = 0 ;
     console.log(newHero);
     const  img = document.createElement(`img`);
-    img.src = `/img/close.png`;
+    img.src = `./img/close.png`;
     img.classList.add(`img`);
     const checkFav =   document.createElement(`input`);
     checkFav.type = `checkbox`;
@@ -72,7 +79,7 @@ function  renderHero (newHero){
 
     checkFav.addEventListener(`change`,async ()=>{
         checkFav.checked === true ? newHero.favourite = true: newHero.favourite = false
-        await controller (`${API}/heroes/${newHero.id}`,`PUT`,newHero);
+       const newHeroes =  await controller (`${API}/heroes/${newHero.id}`,`PUT`,newHero);
         console.log(`Change element in base ${newHero.name_surname} , ${newHero.favourite}`)
     })
 }
