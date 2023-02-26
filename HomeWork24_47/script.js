@@ -85,5 +85,3 @@ function  renderHero (newHero){
 }
 
 
-
-

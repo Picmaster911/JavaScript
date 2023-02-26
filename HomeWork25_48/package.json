@@ -1,5 +1,12 @@
 {
-  "dependencies": {
-    "@bundled-es-modules/axios": "^0.27.2"
-  }
+  "name": "homework25_48",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "type": "module",
+  "scripts": {
+    "bild": "node script.js"
+  },
+  "author": "",
+  "license": "ISC"
 }
